@@ -8,6 +8,12 @@ export const websites: WebsiteItem[] = [
     icon: 'https://websites.holyer.site/assets/logo-DhsuSRGg.svg',
   },
   {
+    name: '个人主页',
+    url: 'https://github.com/qlhuo/holyer',
+    description: '我的个人网站',
+    icon: 'https://me.holyer.site/favicon.svg',
+  },
+  {
     name: 'HOLYER-LIB',
     url: 'https://qlhuo.github.io/holyer-lib/',
     description: '开箱即用的Vue@2.6组件库，支持单包引入',
@@ -18,11 +24,5 @@ export const websites: WebsiteItem[] = [
     url: 'https://github.com/qlHuo/holyer-frontend',
     description: '前端工作台，前端学习笔记及知识体系',
     icon: 'https://qlhuo.github.io/holyer-frontend/static/logo.svg',
-  },
-  {
-    name: '掘金',
-    url: 'https://juejin.cn',
-    description: '程序员社区',
-    icon: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/juejin.svg',
   },
 ];
