@@ -7,9 +7,16 @@ import WebsiteList from './components/WebsiteList.vue';
 import FooterSection from './components/FooterSection.vue';
 import { websites } from './data/websites';
 import { personInfo } from './data/personInfo';
+import { useCursorEffects, initClickEffect } from './composables/useCursorEffects';
 
 const currentYear = new Date().getFullYear();
 const backgroundImage = ref('');
+
+// 初始化 cursor 效果 (鼠标跟随)
+useCursorEffects();
+
+// 初始化点击爆炸效果
+initClickEffect();
 
 const getTodayKey = () => {
   const today = new Date();

@@ -58,3 +58,13 @@ body {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
+.tilt-card,
+.tilt-target {
+  transform-style: preserve-3d;
+}
+
+.tilt-card:hover,
+.tilt-target:hover {
+  will-change: transform;
+}
