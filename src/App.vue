@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import HeroSection from './components/HeroSection.vue';
 import QuoteCard from './components/QuoteCard.vue';
 import TimeWeatherCard from './components/TimeWeatherCard.vue';
@@ -7,7 +7,7 @@ import WebsiteList from './components/WebsiteList.vue';
 import FooterSection from './components/FooterSection.vue';
 import { websites } from './data/websites';
 import { personInfo } from './data/personInfo';
-import { useCursorEffects, initClickEffect } from './composables/useCursorEffects';
+import { useCursorEffects, initClickEffect, cleanupClickEffect } from './composables/useCursorEffects';
 
 const currentYear = new Date().getFullYear();
 const backgroundImage = ref('');
@@ -15,8 +15,24 @@ const backgroundImage = ref('');
 // 初始化 cursor 效果 (鼠标跟随)
 useCursorEffects();
 
+// 页面从不可见变可见时（如从其他 tab 切回），重新初始化点击效果
+const handleVisibilityChange = () => {
+  if (document.visibilityState === 'visible') {
+    cleanupClickEffect();
+    initClickEffect();
+  }
+};
+
 // 初始化点击爆炸效果
-initClickEffect();
+onMounted(() => {
+  initClickEffect();
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+});
+
+onUnmounted(() => {
+  cleanupClickEffect();
+  document.removeEventListener('visibilitychange', handleVisibilityChange);
+});
 
 const getTodayKey = () => {
   const today = new Date();
