@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const props = defineProps<{
-  src: string;
-  alt: string;
-  fallback?: string;
-  size?: string;
-}>();
+  src: string
+  alt: string
+  fallback?: string
+  size?: string
+}>()
 
-const imgError = ref(false);
+const imgError = ref(false)
 
 const handleError = () => {
-  imgError.value = true;
-};
+  imgError.value = true
+}
 
 const displayIcon = () => {
   if (imgError.value || !props.src) {
-    return props.fallback || '📎';
+    return props.fallback || '📎'
   }
-  return null;
-};
+  return null
+}
 </script>
 
 <template>

@@ -1,4 +1,4 @@
-import type { SocialLink } from '../types';
+import type { SocialLink } from '../types'
 
 export const socials: SocialLink[] = [
   {
@@ -16,4 +16,4 @@ export const socials: SocialLink[] = [
     url: 'mailto:qlhuo@qq.com',
     icon: 'https://res.wx.qq.com/t/webmail/webmail/res/static/images/base/style/favicon/qqmail_favicon_32h.65f829f.png',
   },
-];
+]

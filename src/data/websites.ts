@@ -1,4 +1,4 @@
-import type { WebsiteItem } from '../types';
+import type { WebsiteItem } from '../types'
 
 export const websites: WebsiteItem[] = [
   {
@@ -25,4 +25,4 @@ export const websites: WebsiteItem[] = [
     description: '前端工作台，前端学习笔记及知识体系',
     icon: 'https://qlhuo.github.io/holyer-frontend/static/logo.svg',
   },
-];
+]

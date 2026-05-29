@@ -1,48 +1,48 @@
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 export function useTypewriter(speed: number = 50) {
-  const displayText = ref('');
-  const isTyping = ref(false);
+  const displayText = ref('')
+  const isTyping = ref(false)
 
-  let index = 0;
-  let text = '';
-  let timeoutId: number;
+  let index = 0
+  let text = ''
+  let timeoutId: number
 
   const start = (newText: string, delay: number = 0) => {
-    text = newText;
-    index = 0;
-    displayText.value = '';
-    isTyping.value = true;
+    text = newText
+    index = 0
+    displayText.value = ''
+    isTyping.value = true
 
     const run = () => {
       if (index < text.length) {
-        displayText.value += text[index];
-        index++;
-        timeoutId = window.setTimeout(run, speed);
+        displayText.value += text[index]
+        index++
+        timeoutId = window.setTimeout(run, speed)
       } else {
-        isTyping.value = false;
+        isTyping.value = false
       }
-    };
+    }
 
     if (delay > 0) {
-      window.setTimeout(run, delay);
+      window.setTimeout(run, delay)
     } else {
-      run();
+      run()
     }
-  };
+  }
 
   const stop = () => {
     if (timeoutId) {
-      clearTimeout(timeoutId);
+      clearTimeout(timeoutId)
     }
-    isTyping.value = false;
-  };
+    isTyping.value = false
+  }
 
   const reset = () => {
-    stop();
-    displayText.value = '';
-    index = 0;
-  };
+    stop()
+    displayText.value = ''
+    index = 0
+  }
 
   return {
     displayText,
@@ -50,5 +50,5 @@ export function useTypewriter(speed: number = 50) {
     start,
     stop,
     reset,
-  };
+  }
 }

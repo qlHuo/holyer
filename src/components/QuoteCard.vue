@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue'
 
 const quote = ref<{ hitokoto: string; from?: string }>({
   hitokoto: '加载中...',
   from: '',
-});
+})
 
 const fetchQuote = async () => {
   try {
-    const res = await fetch('https://60s.holyer.site/v2/hitokoto');
-    const data = await res.json();
+    const res = await fetch('https://60s.holyer.site/v2/hitokoto')
+    const data = await res.json()
     if (data.data?.hitokoto) {
       quote.value = {
         hitokoto: data.data.hitokoto,
         from: data.data.from || '',
-      };
+      }
     }
   } catch {
     quote.value = {
       hitokoto: '山不在高，水不在深。',
       from: '',
-    };
+    }
   }
-};
+}
 
-onMounted(fetchQuote);
+onMounted(fetchQuote)
 </script>
 
 <template>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { SocialLink } from '../types';
-import IconImage from './IconImage.vue';
+import type { SocialLink } from '../types'
+import IconImage from './IconImage.vue'
 
 defineProps<{
-  socials: SocialLink[];
-}>();
+  socials: SocialLink[]
+}>()
 </script>
 
 <template>

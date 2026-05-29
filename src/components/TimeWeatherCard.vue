@@ -32,15 +32,15 @@ const updateTime = () => {
 
 const getWeatherIcon = (condition: string): string => {
   const iconMap: Record<string, string> = {
-    '晴': '☀️',
-    '多云': '⛅',
-    '阴': '☁️',
-    '雨': '🌧️',
-    '雪': '❄️',
-    '雷': '⛈️',
-    '雾': '🌫️',
-    '沙尘': '🌪️',
-    '霾': '🌫️',
+    晴: '☀️',
+    多云: '⛅',
+    阴: '☁️',
+    雨: '🌧️',
+    雪: '❄️',
+    雷: '⛈️',
+    雾: '🌫️',
+    沙尘: '🌪️',
+    霾: '🌫️',
   };
   return iconMap[condition] || '☀️';
 };
@@ -98,7 +98,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="glass-card flex flex-row gap-8 items-stretch justify-center animate-fade-in h-full px-4 pt-4 pb-4">
+  <section
+    class="glass-card flex flex-row gap-8 items-stretch justify-center animate-fade-in h-full px-4 pt-4 pb-4"
+  >
     <!-- 时间日期区域 -->
     <div class="text-center shrink-0 flex flex-col justify-between">
       <p class="text-sm text-text-muted tracking-wider">当前时间</p>

@@ -16,19 +16,37 @@
  *   修改 cursorConfig.type 为上述任意值即可切换效果
  *   设为 null 则使用系统默认 cursor
  */
-import type { TrailingCursorOptions, BubbleCursorOptions, SnowflakeCursorOptions, EmojiCursorOptions, GhostCursorOptions, FollowingDotCursorOptions, FairyDustCursorOptions, RainbowCursorOptions } from 'cursor-effects';
+import type {
+  TrailingCursorOptions,
+  BubbleCursorOptions,
+  SnowflakeCursorOptions,
+  EmojiCursorOptions,
+  GhostCursorOptions,
+  FollowingDotCursorOptions,
+  FairyDustCursorOptions,
+  RainbowCursorOptions,
+} from 'cursor-effects'
 
-export type CursorType = 'trailing' | 'bubble' | 'snowflake' | 'emoji' | 'ghost' | 'followingDot' | 'fairyDust' | 'rainbow' | null;
+export type CursorType =
+  | 'trailing'
+  | 'bubble'
+  | 'snowflake'
+  | 'emoji'
+  | 'ghost'
+  | 'followingDot'
+  | 'fairyDust'
+  | 'rainbow'
+  | null
 
 export interface CursorOptions {
-  trailing?: TrailingCursorOptions;
-  bubble?: BubbleCursorOptions;
-  snowflake?: SnowflakeCursorOptions;
-  emoji?: EmojiCursorOptions;
-  ghost?: GhostCursorOptions;
-  followingDot?: FollowingDotCursorOptions;
-  fairyDust?: FairyDustCursorOptions;
-  rainbow?: RainbowCursorOptions;
+  trailing?: TrailingCursorOptions
+  bubble?: BubbleCursorOptions
+  snowflake?: SnowflakeCursorOptions
+  emoji?: EmojiCursorOptions
+  ghost?: GhostCursorOptions
+  followingDot?: FollowingDotCursorOptions
+  fairyDust?: FairyDustCursorOptions
+  rainbow?: RainbowCursorOptions
 }
 
 export const cursorConfig = {
@@ -46,4 +64,4 @@ export const cursorConfig = {
       rate: 10,
     } as TrailingCursorOptions,
   } as CursorOptions,
-};
+}
